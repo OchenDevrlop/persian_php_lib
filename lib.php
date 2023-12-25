@@ -77,11 +77,11 @@
         }
         throw new UnexpectedValueException("آدرس وارد شده صحیح نیست، آدرس وارد شده: $url");
     }
-    function shoru_code(){
-        echo '<!DOCTYPE html> <html lang="en"> <head>     <meta charset="UTF-8">     <meta name="viewport" content="width=device-width, initial-scale=1.0">     <title>Farsi PHP Made By Ochen</title><style>body{font-family: IranSansX;}</style></head> <body>';
+    function shoru_code(string $title = "Farsi PHP Made By Ochen", string $charset = "UTF-8", string $lang = "fa-IR", string $internalCSS = "", string $externalLinkOrMetaTag = ""){
+        echo "<!DOCTYPE html> <html lang=\"$lang\"> <head>     <meta charset=\"$charset\">   $externalLinkOrMetaTag  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">     <title>$title</title><style>body{font-family: IranSansX;} $internalCSS </style></head> <body>";
     }
-    function payan_code(){
-        echo '</body></html>';
+    function payan_code(string $javascript = ""){
+        echo "<script>$javascript</script></body></html>";
     }
     # Function for printf()
     function chapf($string, ...$args){
@@ -90,4 +90,17 @@
             $resault .= $args[$i];
         }
         echo $resault;
+    }
+    function huruf_bozorg(string $string){
+        return strtoupper($string);
+    }
+    function huruf_kuchak(string $string){
+        return strtolower($string);
+    }
+    function jostojoo_reshte(string $fullString, string $keyword){
+        if(str_contains($fullString, $keyword)){
+            return "True, متن مورد نظر در رشته وجود دارد";
+        }else{
+            return false;
+        }
     }
