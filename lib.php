@@ -13,11 +13,21 @@
         }
         echo $resault . "<br>";
     }
-    function dump_kon(string $string){
+    function dump_kon($string) {
         var_dump($string);
+    }
+    function dump_kon_tamiz($string) {
+        echo "<pre>";
+        var_dump($string);
+        echo "</pre>";
     }
     function chap_array(array $array){
         print_r($array);
+    }
+    function chap_array_tamiz(array $array){
+        echo "<pre>";
+        print_r($array);
+        echo "</pre>";
     }
     function chasbandan(string $string_1, string $string_2, string ...$string){
         $resault = $string_1 . $string_2;
@@ -54,9 +64,11 @@
         }
         return $number_1;
     }
+    # Function that Prints then Adds New Line
     function khat_jadid(){
         echo '<br>';
     }
+    # Function of Redirecting
     function redirect($url){
         $urlFixed = filter_var($url, FILTER_VALIDATE_URL);
         if($urlFixed){
@@ -70,4 +82,12 @@
     }
     function payan_code(){
         echo '</body></html>';
+    }
+    # Function for printf()
+    function chapf($string, ...$args){
+        $resault = $string;
+        for ($i = 0; $i < count($args); $i++){
+            $resault .= $args[$i];
+        }
+        echo $resault;
     }
