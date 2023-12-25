@@ -91,3 +91,16 @@
         }
         echo $resault;
     }
+    function huruf_bozorg(string $string){
+        return strtoupper($string);
+    }
+    function huruf_kuchak(string $string){
+        return strtolower($string);
+    }
+    function jostojoo_reshte(string $fullString, string $keyword){
+        if(str_contains($fullString, $keyword)){
+            return "True, متن مورد نظر در رشته وجود دارد";
+        }else{
+            return false;
+        }
+    }
