@@ -104,3 +104,6 @@
             return false;
         }
     }
+    function sabet(string $name, $value){
+        define("$name", "$value");
+    }
