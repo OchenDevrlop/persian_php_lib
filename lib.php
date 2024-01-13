@@ -80,8 +80,10 @@
     function shoru_code(string $title = "Farsi PHP Made By Ochen", string $charset = "UTF-8", string $lang = "fa-IR", string $internalCSS = "", string $externalLinkOrMetaTag = ""){
         echo "<!DOCTYPE html> <html lang=\"$lang\"> <head>     <meta charset=\"$charset\">   $externalLinkOrMetaTag  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">     <title>$title</title><style>body{font-family: IranSansX;} $internalCSS </style></head> <body>";
     }
-    function payan_code(string $javascript = ""){
-        echo "<script>$javascript</script></body></html>";
+    function payan_code(string $javascript = "", $finalMessage = "", $finalActionFunction){
+        echo "<br /><script>$javascript</script></body></html>";
+        $finalActionFunction();
+        exit("$finalMessage");
     }
     # Function for printf()
     function chapf($string, ...$args){
@@ -104,6 +106,6 @@
             return false;
         }
     }
-    function sabet(string $name, $value){
-        define("$name", "$value");
+    function tedad_kalame(string $arg){
+        return str_word_count($arg);
     }
