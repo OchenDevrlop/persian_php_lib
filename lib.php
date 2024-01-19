@@ -109,3 +109,27 @@
     function tedad_kalame(string $arg){
         return str_word_count($arg);
     }
+    class TagJadid{
+        public function __construct($nameOfTag, $innerText, $idName, ...$classAttr) {
+            $this->tagName = $nameOfTag;
+            $this->tagContent = $innerText;
+            $this->idAttr = $idName;
+            for($i = 0; $i < count($classAttr); $i++){
+                $this->classList .= $classAttr[$i] . " ";
+            }
+        }
+        public $tagName;
+        public $tagContent;
+        public $idAttr;
+        public $classList = "";
+        function vared_kon(){
+            echo "<" . $this->tagName . " id=\"" . $this->idAttr . "\" class=\"" . $this->classList . "\" >" . $this->tagContent . "</" . $this->tagName . ">";
+        }
+        function return_kon(){
+            return "<" . $this->tagName . " id=\"" . $this->idAttr . "\" class=\"" . $this->classList . "\" >" . $this->tagContent . "</" . $this->tagName . ">";
+        }
+    }
+    function sabet(string $name, $value){
+        define("$name", $value);
+        return true;
+    }
